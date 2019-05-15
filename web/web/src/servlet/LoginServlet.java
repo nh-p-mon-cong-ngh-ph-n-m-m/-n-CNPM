@@ -32,11 +32,9 @@ public class LoginServlet extends HttpServlet {
 		String error = "";
 
 		if (usernamex.equals("") || passwordx.equals("")) {
-			error = "vui long nhập đầy đủ thông tin !";
+			error = "vui lòng nhập đầy đủ thông tin !";
 
 		} else if (taiKhoanDAO.checkLogin(usernamex, passwordx, access1, status1) == false) {
-			error = "chưa nhập đủ thông tin hoặc tài khoản  và mật khẩu chưa chính xác !";
-		} else if (taiKhoanDAO.checkLogin1(usernamex, passwordx, access1, status1) == false) {
 			error = "chưa nhập đủ thông tin hoặc tài khoản  và mật khẩu chưa chính xác !";
 		}
 		if (error.length() > 0) {
@@ -51,10 +49,6 @@ public class LoginServlet extends HttpServlet {
 		try {
 			if (taiKhoanDAO.checkLogin(usernamex, passwordx, access1, status1) == true) {
 				url = "/index.jsp";
-				HttpSession session = request.getSession();
-				session.setAttribute("usernamex", usernamex);
-			} else if (taiKhoanDAO.checkLogin1(usernamex, passwordx, access1, status1) == true) {
-				url = "/Admin/index.jsp";
 				HttpSession session = request.getSession();
 				session.setAttribute("usernamex", usernamex);
 			} else {
