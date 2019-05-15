@@ -1,7 +1,4 @@
-﻿<%@page import="dao.AccountDAOImpl"%>
-<%@page import="java.text.NumberFormat"%>
-<%@page import="model.Product"%>
-<%@page import="model.Cart"%>
+﻿
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
